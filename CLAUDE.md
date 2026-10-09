@@ -114,9 +114,9 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 | Что | Когда грузить |
 | --- | --- |
-| **Superpowers** | Многошаговая задача: нужен спек, план, TDD и ревью между шагами. Оттуда же `/verify`. |
-| **Context7** | Пишем код под библиотеку или API: нужна актуальная документация нужной версии, а не память модели. В запрос добавляется `use context7`. |
-| **webapp-testing** | Проверить фронтенд живьём: клики, авторизация, JS-рендер, скриншоты, логи браузера. Локальная отладка, не CI. |
+| [**Context7**](https://context7.com/) ([пакет](https://www.npmjs.com/package/@upstash/context7-mcp)) | Пишем код под библиотеку, фреймворк, SDK или CLI: нужна актуальная документация нужной версии, а не память модели. Стоит в окружении как MCP-сервер; в запрос добавляется `use context7`. |
+| [**webapp-testing**](https://github.com/anthropics/skills/tree/main/skills/webapp-testing) | Проверить фронтенд живьём: клики, авторизация, JS-рендер, инспекция DOM, скриншоты, логи браузера. Локальная отладка, не CI. Стоит в окружении как скилл. |
+| [**Superpowers**](https://github.com/obra/superpowers-marketplace) | Многошаговая задача: нужен спек, план, TDD и ревью между шагами. Оттуда же `/verify`. Ставится руками: `/plugin install superpowers@claude-plugins-official`. |
 
-Команды установки и подробности:
+Подробности, оговорки и что делать, если инструмент не отвечает:
 https://github.com/021-lab/setup-coder/blob/main/docs/external-skills.md

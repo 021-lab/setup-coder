@@ -19,7 +19,7 @@ docs/              справка про сам этот репозиторий,
 ```bash
 set -eu
 TMP=$(mktemp -d)
-git clone --depth 1 https://github.com/021-lab/setup-coder "$TMP/src" || exit 0
+git clone --depth 1 --branch v1 https://github.com/021-lab/setup-coder "$TMP/src" || exit 0
 "$TMP/src/setup-coder.sh" --env
 rm -rf "$TMP"
 ```
@@ -27,6 +27,9 @@ rm -rf "$TMP"
 Ставит в `$HOME/.claude`: правила, скиллы, MCP-серверы на пользовательский
 уровень. Каждый новый чат этого окружения поднимается уже настроенным,
 репозиторий проекта при этом не трогается вообще.
+
+Клон прибит к тегу `v1`, а не к `main`: правка в `main` уезжает в окружения
+только когда вы передвинете тег — см. [Версии](docs/releases.md).
 
 `|| exit 0` намеренный: нет сети — окружение всё равно поднимется, а причина
 уйдёт в лог старта. Что и когда поставилось, видно в `$HOME/.claude/.setup-coder`.
@@ -62,7 +65,11 @@ git clone --depth 1 https://github.com/021-lab/setup-coder /tmp/setup-coder
 
 ## Дальше
 
-- [Внешние инструменты](docs/external-skills.md) — что ставится само, а что
-  руками, и когда это грузить.
-- [Как это попадает в окружение](docs/environment.md) — механизм, проверки и
-  ограничения.
+- [Установщик](docs/installer.md) — режимы, что куда ложится, зависимости,
+  коды возврата.
+- [Внешние инструменты](docs/external-skills.md) — Context7, webapp-testing,
+  Superpowers: что ставится само, что руками, и что нужно сверх установки.
+- [Как это попадает в окружение](docs/environment.md) — механизм, что проверено
+  и что знать нельзя заранее.
+- [Версии](docs/releases.md) — почему тег, а не `main`, и как выпустить
+  изменение.
